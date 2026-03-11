@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+    color: #000000; /* Black text color */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000; /* Black text for the main heading */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Light shadow for better visibility */
+}
+
+h2, h3 {
+    color: #000000; /* Black text for subheadings */
+}
+
+/* Form Styles */
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #000000; /* Black color for labels */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="checkbox"] {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Button Styles */
+button {
+    background-color: #ff6347; /* Tomato color */
+    color: white; /* White text for button */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #ff4500; /* Darker tomato color on hover */
+}
+
+/* Receipt Styles */
+h2, h3 {
+    margin-top: 20px;
+}
+
+p {
+    margin: 5px 0;
+    color: #000000; /* Black text for receipt items */
+}
+
+/* Error Message Styles */
+h3[style*='color: red'] {
+    color: red;
+    font-weight: bold;
+}

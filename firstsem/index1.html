@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fast Food Ordering System</title>
+    <script>
+        function updateTotal() {
+            let total = 0;
+
+            // Get all checkboxes
+            const items = document.querySelectorAll('input[type="checkbox"]:checked');
+            items.forEach(item => {
+                const sizeSelect = document.querySelector(`[name="${item.value}_size"]`);
+                const price = parseInt(sizeSelect.options[sizeSelect.selectedIndex].getAttribute('data-price'));
+                total += price;
+            });
+
+            // Display total
+            document.getElementById('total-price').innerText = `Total Price: ₱${total}`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Fast Food Ordering</h1>
+    </header>
+    <main>
+        <form action="process_order.php" method="post" oninput="updateTotal()">
+            <h2>Menu</h2>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Burger">
+                    Burger
+                </label>
+                <select name="Burger_size">
+                    <option value="Small" data-price="20">Small - ₱20</option>
+                    <option value="Medium" data-price="40">Medium - ₱40</option>
+                    <option value="Large" data-price="60">Large - ₱60</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Pizza">
+                    Pizza
+                </label>
+                <select name="Pizza_size">
+                    <option value="Small" data-price="8">Small - ₱8</option>
+                    <option value="Medium" data-price="16">Medium - ₱16</option>
+                    <option value="Large" data-price="24">Large - ₱24</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Fries">
+                    Fries
+                </label>
+                <select name="Fries_size">
+                    <option value="Small" data-price="35">Small - ₱35</option>
+                    <option value="Medium" data-price="45">Medium - ₱45</option>
+                    <option value="Large" data-price="75">Large - ₱75</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Soda">
+                    Soda
+                </label>
+                <select name="Soda_size">
+                    <option value="Small" data-price="20">Small - ₱20</option>
+                    <option value="Medium" data-price="30">Medium - ₱30</option>
+                    <option value="Large" data-price="40">Large - ₱40</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="MilkTea">
+                    Milk Tea
+                </label>
+                <select name="MilkTea_size">
+                    <option value="Small" data-price="70">Small - ₱70</option>
+                    <option value="Medium" data-price="90">Medium - ₱90</option>
+                    <option value="Large" data-price="110">Large - ₱110</option>
+                </select>
+            </div><br>
+            <h3>Contact Information</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+            <button type="submit">Place Order</button>
+        </form>
+        <p id="total-price">Total Price: ₱0</p>
+    </main>
+</body>
+</html>

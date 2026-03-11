@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fast Food Ordering System</title>
+</head>
+<body>
+    <header>
+        <h1>Fast Food Ordering</h1>
+    </header>
+    <main>
+        <form action="process_order.php" method="post">
+            <h2>Menu</h2>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Burger">
+                    Burger 
+                </label>
+				 
+                <select name="Burger_size">
+                    <option value="Small">Small	- ₱35  </option>
+                    <option value="Medium">Medium - ₱55</option>
+                    <option value="Large">Large - ₱75</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Pizza">
+                    Pizza 
+                </label>
+                <select name="Pizza_size">
+                    <option value="Small">Small - ₱80</option>
+                    <option value="Medium">Medium - ₱135</option>
+                    <option value="Large">Large - ₱240</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Fries">
+                    Fries 
+                </label>
+                <select name="Fries_size">
+                    <option value="Small">Small - ₱35</option>
+                    <option value="Medium">Medium - ₱45</option>
+                    <option value="Large">Large - ₱75</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="Soda">
+                    Soda 
+                </label>
+                <select name="Soda_size">
+                    <option value="Small">Small - ₱20</option>
+                    <option value="Medium">Medium - ₱30</option>
+                    <option value="Large">Large - ₱50</option>
+                </select>
+            </div><br>
+            <div>
+                <label>
+                    <input type="checkbox" name="items[]" value="MilkTea">
+                    Milk Tea 
+                </label>
+                <select name="MilkTea_size">
+                    <option value="Small">Small - ₱70</option>
+                    <option value="Medium">Medium - ₱90</option>
+                    <option value="Large">Large - ₱110</option>
+                </select>
+            </div><br>
+            <h3>Contact Information</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required><br>
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+</body>
+</html>
